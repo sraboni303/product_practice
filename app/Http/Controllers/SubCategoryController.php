@@ -23,7 +23,7 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-
+        return view('subcategory.create');
     }
 
     /**
