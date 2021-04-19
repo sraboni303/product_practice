@@ -22,7 +22,11 @@
                             <td>{{ $category->slug }}</td>
                             <td>
                                 <a href="{{ route('category.edit', $category->id) }}" class="btn btn-success">Edit</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
+                                <form class="d-inline-block" action="{{ route('category.destroy', $category->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                             </td>
                         </tr>
                       @endforeach
