@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\SubCategoryRequest;
+use App\Models\SubCategory;
 
 class SubCategoryController extends Controller
 {
@@ -32,9 +34,10 @@ class SubCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SubCategoryRequest $request)
     {
-        //
+        SubCategory::create($request->validated());
+        return back();
     }
 
     /**
