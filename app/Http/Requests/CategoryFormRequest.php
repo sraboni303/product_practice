@@ -24,7 +24,7 @@ class CategoryFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required | unique:categories',
         ];
     }
 
@@ -32,6 +32,7 @@ class CategoryFormRequest extends FormRequest
     {
         return [
             'name.required' => 'The name field is required.',
+            'name.unique' => 'The name is already exists.',
         ];
     }
 }

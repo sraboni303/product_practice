@@ -17,7 +17,7 @@
                     <tbody>
                       @foreach ($categories as $category)
                         <tr>
-                            <th>{{ $loop->index+1 }}</th>
+                            <th>{{ $category->id }}</th>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->slug }}</td>
                             <td>
