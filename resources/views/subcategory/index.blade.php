@@ -15,15 +15,18 @@
                       </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>Name</th>
-                            <th>Name</th>
-                            <th>Name</th>
-                            <td>
-                                <a href="#" class="btn btn-success">Edit</a>
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </td>
-                        </tr>
+                        @foreach ($sub_categories as $sub_category)
+                            <tr>
+                                <th>{{ $sub_category->name }}</th>
+                                <th>Name</th>
+                                <th>Name</th>
+                                <td>
+                                    <a href="#" class="btn btn-success">Edit</a>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
                   </table>
 
