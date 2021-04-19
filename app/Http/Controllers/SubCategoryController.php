@@ -23,7 +23,7 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -56,7 +56,7 @@ class SubCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('subcategory.edit');
     }
 
     /**
