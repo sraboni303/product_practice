@@ -4,19 +4,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card p-5">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <form action="{{ route('category.store') }}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Category Name</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="submit" class="btn btn-info" value="Submit">
-                    </div>
-                </form>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
+                    {{ __('You are logged in!') }}
+                </div>
             </div>
         </div>
     </div>
