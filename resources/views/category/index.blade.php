@@ -11,6 +11,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Slug</th>
+                        <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -19,6 +20,10 @@
                             <th>{{ $loop->index+1 }}</th>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->slug }}</td>
+                            <td>
+                                <a href="{{ route('category.edit', $category->id) }}" class="btn btn-success">Edit</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
+                            </td>
                         </tr>
                       @endforeach
                     </tbody>
