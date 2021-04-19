@@ -6,8 +6,9 @@
         <div class="col-md-8">
             <div class="card p-5">
 
-                <form action="" method="POST">
+                <form action="{{ route('category.update', $categories->id) }}" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="mb-3">
                         <label for="name" class="form-label">Category Name</label>
                         <input type="text" class="form-control" id="name" name="name" value="{{ $categories->name }}">
