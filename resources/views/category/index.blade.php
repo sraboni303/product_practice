@@ -14,11 +14,13 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th>1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                      </tr>
+                      @foreach ($categories as $category)
+                        <tr>
+                            <th>{{ $loop->index+1 }}</th>
+                            <td>{{ $category->name }}</td>
+                            <td>{{ $category->slug }}</td>
+                        </tr>
+                      @endforeach
                     </tbody>
                   </table>
 
