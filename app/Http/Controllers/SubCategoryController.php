@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\SubCategory;
-use Illuminate\Http\Request;
 use App\Http\Requests\SubCategoryRequest;
 
 class SubCategoryController extends Controller
@@ -41,17 +40,6 @@ class SubCategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -69,7 +57,7 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update()
     {
         //
     }
@@ -80,8 +68,10 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SubCategory $subCategory)
     {
-        //
+        $subCategory->delete();
+        return back();
     }
+
 }

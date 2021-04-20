@@ -22,7 +22,13 @@
                                 <td>{{ $sub_category->slug }}</td>
                                 <td>
                                     <a href="#" class="btn btn-success">Edit</a>
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+
+                                    <form class="d-inline-block" action="{{ route('subcategory.destroy', $sub_category->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+
                                 </td>
                             </tr>
                         @endforeach
