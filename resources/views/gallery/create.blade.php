@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card p-5">
 
-                    <form action="" method="post" enctype="multipart/form-data" class="dropzone" id="dropzoneForm">
+                    <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data" class="dropzone" id="dropzoneForm">
                         @csrf
                     </form>
                     <div class="text-center mt-3">
