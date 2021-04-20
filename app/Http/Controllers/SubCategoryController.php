@@ -45,9 +45,9 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(SubCategory $subcategory)
     {
-        return view('subcategory.edit');
+        return view('subcategory.edit', compact('subcategory'));
     }
 
     /**

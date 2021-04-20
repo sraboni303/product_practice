@@ -9,7 +9,7 @@
                 <form action="#">
                     <div class="mb-3">
                         <label for="name" class="form-label">SubCategory Name</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name" value="{{ $subcategory->name }}">
                     </div>
                     <div class="mb-3">
                         <input type="submit" class="btn btn-info" value="Submit">
