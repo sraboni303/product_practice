@@ -26,7 +26,7 @@
             </div>
 
             <div class="my-3">
-                <a href="#" class="btn btn-secondary">Back to Home</a>
+                <a href="{{ route('subcategory.index') }}" class="btn btn-secondary">Back to Home</a>
             </div>
         </div>
     </div>

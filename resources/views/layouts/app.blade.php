@@ -43,10 +43,13 @@
                             <a class="nav-link" href="{{ route('category.index') }}">{{ __('Category') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">{{ __('Sub-Category') }}</a>
+                            <a class="nav-link" href="{{ route('subcategory.index') }}">{{ __('Sub-Category') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">{{ __('Product') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('gallery.index') }}">{{ __('Gallery') }}</a>
                         </li>
                     </ul>
 

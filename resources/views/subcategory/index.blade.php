@@ -17,9 +17,9 @@
                     <tbody>
                         @foreach ($sub_categories as $sub_category)
                             <tr>
-                                <th>{{ $sub_category->name }}</th>
-                                <th>Name</th>
-                                <th>Name</th>
+                                <td>{{ $sub_category->id }}</td>
+                                <td>{{ $sub_category->name }}</td>
+                                <td>{{ $sub_category->slug }}</td>
                                 <td>
                                     <a href="#" class="btn btn-success">Edit</a>
                                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="my-3">
-                <a href="#" class="btn btn-secondary">Create SubCategory</a>
+                <a href="{{ route('subcategory.create') }}" class="btn btn-secondary">Create SubCategory</a>
             </div>
         </div>
     </div>
