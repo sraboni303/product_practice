@@ -26,3 +26,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('category', CategoryController::class);
 Route::resource('subcategory', SubCategoryController::class);
+Route::resource('gallery', GalleryController::class);
