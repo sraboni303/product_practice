@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Requests\SubCategoryRequest;
-use App\Http\Controllers\SubCategoryController;
 
 class SubCategoryController extends Controller
 {
@@ -16,7 +15,7 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        $sub_categories = SubCategoryController::all();
+        $sub_categories = SubCategory::all();
         return view('subcategory.index', compact('sub_categories'));
     }
     /**
