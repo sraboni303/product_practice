@@ -13,7 +13,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+        return view('gallery.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('gallery.create');
     }
 
     /**
@@ -37,16 +37,6 @@ class GalleryController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -56,7 +46,7 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('gallery.edit');
     }
 
     /**
