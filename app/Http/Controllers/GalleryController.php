@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -34,7 +36,13 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // foreach($request->file as $image){
+        //     if($image){
+        //         $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+        //         Storage::putFileAs('public/gallery', $image, $imageName);
+        //         return response()->json(['success' => $imageName]);
+        //     }
+        // }
     }
 
 

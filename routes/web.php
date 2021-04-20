@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
