@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\SubCategory;
-use Illuminate\Http\Request;
 use App\Http\Requests\SubCategoryRequest;
 
 class SubCategoryController extends Controller
@@ -15,7 +14,8 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        $sub_categories = SubCategory::all();
+        // $sub_categories = SubCategory::paginate(5)->get();
+        $sub_categories = SubCategory::latest()->simplePaginate(3);
         return view('subcategory.index', compact('sub_categories'));
     }
     /**
@@ -41,25 +41,14 @@ class SubCategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(SubCategory $subcategory)
     {
-        return view('subcategory.edit');
+        return view('subcategory.edit', compact('subcategory'));
     }
 
     /**
@@ -69,9 +58,10 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SubCategoryRequest $request, SubCategory $subcategory)
     {
-        //
+        $subcategory->update($request->validated());
+        return redirect()->route('subcategory.index');
     }
 
     /**
@@ -80,8 +70,10 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SubCategory $subcategory)
     {
-        //
+        $subcategory->delete();
+        return back();
     }
+
 }
