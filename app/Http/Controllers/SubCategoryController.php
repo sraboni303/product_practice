@@ -57,9 +57,10 @@ class SubCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(SubCategoryRequest $request, SubCategory $subcategory)
     {
-        //
+        $subcategory->update($request->validated());
+        return redirect()->route('subcategory.index');
     }
 
     /**
