@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\SubCategory;
 use App\Http\Requests\SubCategoryRequest;
+use Symfony\Component\HttpFoundation\Request;
 
 class SubCategoryController extends Controller
 {
@@ -25,7 +27,8 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        return view('subcategory.create');
+        $categories = Category::all();
+        return view('subcategory.create', compact('categories'));
     }
 
     /**

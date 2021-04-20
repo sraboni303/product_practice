@@ -25,6 +25,7 @@ class SubCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:sub_categories',
+            'category_id' => 'required',
         ];
     }
 
@@ -33,6 +34,7 @@ class SubCategoryRequest extends FormRequest
         return [
             'name.required' => 'Name field is required',
             'name.unique' => 'This name is already taken',
+            'category_id.required' => 'Invalid Category',
         ];
     }
 }
