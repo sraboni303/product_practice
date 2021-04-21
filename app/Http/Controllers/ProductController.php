@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -23,7 +25,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        $categories = Category::all();
+        $subcategories = SubCategory::all();
+        return view('product.create', compact('categories', 'subcategories'));
     }
 
     /**
@@ -81,4 +85,18 @@ class ProductController extends Controller
     {
         //
     }
+
+
+    // get sub-categories
+    public function getSubCategories(Request $request){
+
+        // $id = $request->cat_id;
+        // $subcategories = SubCategory::where('category_id',$id)->select('id','name')->get();
+
+        // return response()->json([ 'subcategories' => $subcategories ]);
+
+    }
+
+
+
 }
