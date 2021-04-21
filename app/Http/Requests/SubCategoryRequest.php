@@ -23,10 +23,17 @@ class SubCategoryRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required|unique:sub_categories',
-            'category_id' => 'required',
-        ];
+        if($this->method() == "POST"){
+            return [
+                'name' => 'required|unique:sub_categories,name',
+                'category_id' => 'required',
+            ];
+        }else{
+            return [
+                'name' => "required|unique:sub_categories,name,{$this->subcategory->id}",
+                'category_id' => 'required',
+            ];
+        }
     }
 
     public function messages()
@@ -34,7 +41,7 @@ class SubCategoryRequest extends FormRequest
         return [
             'name.required' => 'Name field is required',
             'name.unique' => 'This name is already taken',
-            'category_id.required' => 'Invalid Category',
+            'category_id.required' => 'Category field is required',
         ];
     }
 }

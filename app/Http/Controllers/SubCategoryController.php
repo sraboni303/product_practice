@@ -16,8 +16,7 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        // $sub_categories = SubCategory::paginate(5)->get();
-        $sub_categories = SubCategory::latest()->simplePaginate(3);
+        $sub_categories = SubCategory::with('category')->latest()->simplePaginate(3);
         return view('subcategory.index', compact('sub_categories'));
     }
     /**
@@ -51,7 +50,8 @@ class SubCategoryController extends Controller
      */
     public function edit(SubCategory $subcategory)
     {
-        return view('subcategory.edit', compact('subcategory'));
+        $categories = Category::all();
+        return view('subcategory.edit', compact('subcategory','categories'));
     }
 
     /**

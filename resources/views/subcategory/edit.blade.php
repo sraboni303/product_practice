@@ -10,14 +10,21 @@
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
+                        <select class="form-control @error('category_id') is-invalid @enderror" name="category_id">
+                            @foreach ($categories as $category)
+                                <option {{ $category->id == $subcategory->category_id ? 'selected':'' }} value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('category_id')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+                    </div>
+                    <div class="mb-3">
                         <label for="name" class="form-label">SubCategory Name</label>
                         <input type="text" class="form-control" id="name" name="name" value="{{ $subcategory->name }}">
                     </div>
                     <div class="mb-3">
-                        <input type="submit" class="btn btn-info" value="Submit">
+                        <button type="submit" class="btn btn-info">Update</button>
                     </div>
                 </form>
-
             </div>
 
             <div class="my-3">
