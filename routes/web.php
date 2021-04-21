@@ -31,9 +31,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('category', CategoryController::class);
 Route::resource('subcategory', SubCategoryController::class);
 Route::resource('gallery', GalleryController::class);
+Route::get('subcategories/fetch', [ProductController::class, 'getSubCategories'])->name('subcategories.fetch');
 Route::resource('product', ProductController::class);
 
-Route::get('sub-categories', [ProductController::class, 'getSubCategories'])->name('subcategories.get');
 
 
 
