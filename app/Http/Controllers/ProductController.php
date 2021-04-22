@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductFormRequest;
 
 class ProductController extends Controller
 {
@@ -26,8 +28,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $subcategories = SubCategory::all();
-        return view('product.create', compact('categories', 'subcategories'));
+        return view('product.create', compact('categories'));
     }
 
     /**
@@ -36,9 +37,10 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductFormRequest $request)
     {
-        //
+        Product::create($request->validated());
+        return back();
     }
 
     /**

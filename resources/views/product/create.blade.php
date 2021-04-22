@@ -6,14 +6,8 @@
         <div class="col-md-8">
             <div class="card p-5">
 
-                <form action="" method="POST">
+                <form action="{{ route('product.store') }}" method="POST">
                     @csrf
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Product Name</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
-
-                        @error('name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
-                    </div>
 
                     {{-- categories --}}
                     <div class="mb-3">
@@ -33,6 +27,14 @@
                         </select>
                         @error('subcategory_id')<span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
                     </div>
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Product Name</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name">
+
+                        @error('name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>@enderror
+                    </div>
+
                     <div class="mb-3">
                         <button type="submit" class="btn btn-info">Submit</button>
                     </div>
@@ -61,7 +63,6 @@
                     id:id,
                 },
                 success: function (data) {
-                    console.log(data)
                     $('#subcategory').empty();
                     $.each(data.subcategories, function (index, subcategory) {
                         $('#subcategory').append('<option value="' + subcategory.id + '">' + subcategory.name + '</option>');

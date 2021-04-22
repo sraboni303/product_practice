@@ -34,8 +34,3 @@ Route::resource('gallery', GalleryController::class);
 Route::get('subcategories/fetch', [ProductController::class, 'getSubCategories'])->name('subcategories.fetch');
 Route::resource('product', ProductController::class);
 
-
-
-
-Route::get('/dropdown',[TestController::class , 'index']);
-Route::get('/dropdown-data',[TestController::class , 'data']);
