@@ -33,6 +33,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/gallery', [ProductGalleryController::class, 'index'])->name('gallery.index');
 Route::get('/gallery/create/{id}', [ProductGalleryController::class, 'create'])->name('gallery.create');
 Route::post('/gallery/store', [ProductGalleryController::class, 'store'])->name('gallery.store');
+Route::get('/delete/{id}', [ProductGalleryController::class, 'delete'])->name('gallery.delete');
 
 
 Route::resource('category', CategoryController::class);

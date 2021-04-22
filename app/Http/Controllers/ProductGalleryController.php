@@ -7,11 +7,14 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+use function Symfony\Component\String\b;
+
 class ProductGalleryController extends Controller
 {
     public function index()
     {
-        return view('gallery.index');
+        $galleries = Gallery::simplePaginate(5);
+        return view('gallery.index', compact('galleries'));
     }
 
 
@@ -42,6 +45,13 @@ class ProductGalleryController extends Controller
         }
         Gallery::create($request->validated());
 
+    }
+
+
+    public function delete($id){
+        $gallery = Gallery::find($id);
+        $gallery->delete();
+        return back();
     }
 
 
