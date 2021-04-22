@@ -23,7 +23,7 @@
                                 <td>{{ $product->subCategory->name }}</td>
                                 <td>{{ $product->name }}</td>
                                 <td>
-                                    <a href="" class="btn btn-success">Edit</a>
+                                    <a href="{{ route('product.edit', $product->id) }}" class="btn btn-success">Edit</a>
 
                                     <form class="d-inline-block" action="{{ route('product.destroy', $product->id) }}" method="POST">
                                         @csrf

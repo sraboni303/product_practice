@@ -32,7 +32,11 @@ class ProductFormRequest extends FormRequest
             ];
 
         }else{
-            return 'something is wrong';
+            return [
+                'name' => "required|unique:products,name,{$this->product->id}",
+                'category_id' => 'required',
+                'subcategory_id' => 'required',
+            ];
 
         }
     }

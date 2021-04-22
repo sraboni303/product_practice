@@ -61,9 +61,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+        $subcategories = SubCategory::all();
+        return view('product.edit', compact('categories', 'subcategories', 'product'));
     }
 
     /**
@@ -73,9 +75,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductFormRequest $request, Product $product)
     {
-        //
+        $product->update($request->validated());
+        return redirect()->route('product.index');
     }
 
     /**
