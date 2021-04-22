@@ -25,7 +25,7 @@
                                 <td>
                                     <a href="" class="btn btn-success">Edit</a>
 
-                                    <form class="d-inline-block" action="" method="POST">
+                                    <form class="d-inline-block" action="{{ route('product.destroy', $product->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
