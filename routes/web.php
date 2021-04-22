@@ -7,7 +7,9 @@ use App\Http\Controllers\CustomController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\SubCategoryController;
+use App\Models\Gallery;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +30,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/gallery', [ProductGalleryController::class, 'index'])->name('gallery.index');
+Route::get('/gallery/create/{id}', [ProductGalleryController::class, 'create'])->name('gallery.create');
+Route::post('/gallery/store', [ProductGalleryController::class, 'store'])->name('gallery.store');
+
+
 Route::resource('category', CategoryController::class);
 Route::resource('subcategory', SubCategoryController::class);
-Route::resource('gallery', GalleryController::class);
+// Route::resource('gallery', GalleryController::class);
+// Route::get('gallery/{id}', [GalleryController::class, 'index']);
+
 Route::get('subcategories/fetch', [ProductController::class, 'getSubCategories'])->name('subcategories.fetch');
 Route::resource('product', ProductController::class);
 

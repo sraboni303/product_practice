@@ -3,12 +3,14 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card p-5">
 
                     <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data" class="dropzone" id="dropzoneForm">
                         @csrf
+                        <input type="hidden" name="product_id" value="{{ $id }}">
                     </form>
+
                     <div class="text-center mt-3">
                         <button type="button" class="btn btn-success" id="submit-all"> Upload Gallery</button>
                     </div>

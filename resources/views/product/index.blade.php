@@ -31,6 +31,8 @@
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
 
+                                    <a href="{{ route('gallery.create', $product->id) }}" class="btn btn-info">Gallery</a>
+
                                 </td>
                             </tr>
                         @endforeach

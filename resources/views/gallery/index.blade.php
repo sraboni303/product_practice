@@ -9,7 +9,7 @@
             </div>
 
             <div class="my-3">
-                <a href="#" class="btn btn-secondary">Back to Home</a>
+                <a href="#" class="btn btn-secondary">Create Gallery</a>
             </div>
         </div>
     </div>
